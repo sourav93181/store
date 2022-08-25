@@ -1,0 +1,4 @@
+export {default as Browsing} from "./browsing";
+export {default as Detail} from "./browsing/details";
+export {default as MobileScreen} from "./browsing/mobileScreen";
+export {default as ClothScreen} from "./browsing/clothesScreen";

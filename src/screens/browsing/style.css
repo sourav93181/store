@@ -1,0 +1,13 @@
+
+.Product-Window {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow-y: scroll;
+}
+
+.Product-Window-mobile{
+  height: 93vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
