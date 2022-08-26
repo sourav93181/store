@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Card } from "../../../components";
 import getDenimimg from "../../../api/clothesdenimapi/denim";
 import "./style.css";
-export default function ClothesScreen(props) {
 
+export default function ClothesScreen(props) {
+  const {addClickActionCloth, removeClickActionCloth}=props;
     const [listOfObject, setlistOfObject] = useState([]);
     useEffect(() => {
       setlistOfObject(getDenimimg());
@@ -19,6 +20,8 @@ export default function ClothesScreen(props) {
                 itemImages={item.photo}
                 itemNames={item.name}
                 itemDesc={item.desc}
+                addClickAction={addClickActionCloth}
+                removeClickAction={removeClickActionCloth}
               />
             );
           })}

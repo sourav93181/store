@@ -6,7 +6,7 @@ import autodefault from "../../../assest/images/Nothing.jpg"
 export default function Card(props) {
     let navigate = useNavigate();
     const [val, setval] = useState(0);
-    const {itemImages=autodefault,itemNames="Nothing",itemDesc="",addClickAction, removeClickAction } = props
+    const {itemImages=autodefault,itemNames="Nothing",itemDesc="",addClickAction, removeClickAction } = props;
 
     
             return (

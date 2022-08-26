@@ -7,6 +7,7 @@ import MobileScreen from "./mobileScreen";
 import Detail from "./details";
 import ClothScreen from "./clothesScreen";
 import { Routes } from "react-router-dom";
+import Cart from "../cart";
 
 export default function Browsing(props) {
  
@@ -56,8 +57,10 @@ export default function Browsing(props) {
           />
           <Route path="/mobilescreen" element={<MobileScreen addClickAction1={incrementCart}
                       removeClickAction1={decrementCart} />} />
-          <Route path="/clothscreen" element={<ClothScreen />} />
-          <Route path="/browsing/detail" element={<Detail />} />
+          <Route path="/clothscreen" element={<ClothScreen addClickActionCloth={incrementCart}
+                      removeClickActionCloth={decrementCart} />} />
+          <Route path="/detail" element={<Detail addClickActionpart={incrementCart} removeClickActionpart={decrementCart} />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
 

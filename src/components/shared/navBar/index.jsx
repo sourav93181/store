@@ -21,7 +21,7 @@ export default function NavBar(props) {
       <p onClick={()=>navigate("/browsing/clothscreen")} >clothes</p>
       <div className="NavBar-right">
         <span className="icon-container">
-          <img src={cart} className="NavBar-icon" alt="cart" />
+          <img src={cart} className="NavBar-icon" alt="cart" onClick={()=>navigate("/browsing/cart")}  />
           {sizeOfCart > 0 && (
             <p className="NavBar-icon-tooltip">{sizeOfCart}</p>
           )}

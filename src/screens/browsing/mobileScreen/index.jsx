@@ -19,7 +19,8 @@ export default function MobileScreen(props) {
                 itemImages={item.photo}
                 itemNames={item.name}
                 itemDesc={item.desc}
-                
+                addClickAction={addClickAction1}
+                removeClickAction={removeClickAction1}
               />
             );
           })}
