@@ -54,7 +54,8 @@ export default function Browsing(props) {
               </div>
             }
           />
-          <Route path="/mobilescreen" element={<MobileScreen />} />
+          <Route path="/mobilescreen" element={<MobileScreen addClickAction1={incrementCart}
+                      removeClickAction1={decrementCart} />} />
           <Route path="/clothscreen" element={<ClothScreen />} />
           <Route path="/browsing/detail" element={<Detail />} />
         </Routes>

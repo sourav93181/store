@@ -3,6 +3,7 @@ import { Card } from "../../../components";
 import getRealmeimg from "../../../api/realmeapi/realme";
 import "./style.css";
 export default function MobileScreen(props) {
+  const {addClickAction1, removeClickAction1}=props;
   const [listOfObject, setlistOfObject] = useState([]);
   useEffect(() => {
     setlistOfObject(getRealmeimg());
@@ -18,6 +19,7 @@ export default function MobileScreen(props) {
                 itemImages={item.photo}
                 itemNames={item.name}
                 itemDesc={item.desc}
+                
               />
             );
           })}
@@ -34,6 +36,7 @@ export default function MobileScreen(props) {
                 itemImages={item.photo}
                 itemNames={item.name}
                 itemDesc={item.desc}
+                
               />
             );
           })}
@@ -45,3 +48,4 @@ export default function MobileScreen(props) {
     </div>
   );
 }
+
