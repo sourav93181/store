@@ -3,7 +3,7 @@ import { Card } from "../../../components";
 import getRealmeimg from "../../../api/realmeapi/realme";
 import "./style.css";
 export default function MobileScreen(props) {
-  const {addClickAction1, removeClickAction1}=props;
+  const {addClickAction1, removeClickAction1,searching}=props;
   const [listOfObject, setlistOfObject] = useState([]);
   useEffect(() => {
     setlistOfObject(getRealmeimg());
@@ -13,7 +13,10 @@ export default function MobileScreen(props) {
       <div className="section-m-con1">
         <h3>Realme</h3>
         <div className="horizonal-scrolling">
-          {listOfObject.map((item) => {
+          {(searching.length === 0
+                  ? listOfObject
+                  : listOfObject.filter((item) => item.name.includes(searching))
+                ).map((item) => {
             return (
               <Card
                 itemImages={item.photo}
@@ -31,7 +34,10 @@ export default function MobileScreen(props) {
       <div className="section-m-con1">
         <h3>oppo</h3>
         <div className="horizonal-scrolling">
-          {listOfObject.map((item) => {
+          {(searching.length === 0
+                  ? listOfObject
+                  : listOfObject.filter((item) => item.name.includes(searching))
+                ).map((item) => {
             return (
               <Card
                 itemImages={item.photo}

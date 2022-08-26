@@ -56,11 +56,11 @@ export default function Browsing(props) {
             }
           />
           <Route path="/mobilescreen" element={<MobileScreen addClickAction1={incrementCart}
-                      removeClickAction1={decrementCart} />} />
+                      removeClickAction1={decrementCart} searching={search} />} />
           <Route path="/clothscreen" element={<ClothScreen addClickActionCloth={incrementCart}
-                      removeClickActionCloth={decrementCart} />} />
-          <Route path="/detail" element={<Detail addClickActionpart={incrementCart} removeClickActionpart={decrementCart} />} />
-          <Route path="/cart" element={<Cart />} />
+                      removeClickActionCloth={decrementCart} searching={search} />} />
+          <Route path="/detail" element={<Detail addClickActionpart={incrementCart} removeClickActionpart={decrementCart} searching={search} />} />
+          <Route path="/cart" element={<Cart />}  />
         </Routes>
       </div>
 

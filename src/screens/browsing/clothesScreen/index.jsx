@@ -4,7 +4,7 @@ import getDenimimg from "../../../api/clothesdenimapi/denim";
 import "./style.css";
 
 export default function ClothesScreen(props) {
-  const {addClickActionCloth, removeClickActionCloth}=props;
+  const {addClickActionCloth, removeClickActionCloth,searching}=props;
     const [listOfObject, setlistOfObject] = useState([]);
     useEffect(() => {
       setlistOfObject(getDenimimg());
@@ -14,7 +14,10 @@ export default function ClothesScreen(props) {
       <div className="section-c-con1">
         <h3>Denim</h3>
         <div className="horizonal-scrolling">
-          {listOfObject.map((item) => {
+          {(searching.length === 0
+                  ? listOfObject
+                  : listOfObject.filter((item) => item.name.includes(searching))
+                ).map((item) => {
             return (
               <Card
                 itemImages={item.photo}

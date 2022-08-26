@@ -2,24 +2,24 @@ import React ,{useEffect, useState} from 'react';
 import { Card, ProductDetail } from '../../../components';
 import { getBrowsingData } from '../../../api/browsingApi';
 import "./style.css";
-import { Specific } from '../../../api/apiImages/ps';
+
 
 export default function Detail(props) {
-  const {addClickActionpart, removeClickActionpart}=props;
-    const [search, setSearch] = useState("");
+  const {addClickActionpart, removeClickActionpart,searching}=props;
+    
     const [listOfObject, setlistOfObject] = useState([]);
   useEffect(() => {
     setlistOfObject(getBrowsingData());
   }, []);
     return (
         <div className='product-detail'>
-            <ProductDetail addClickAction={addClickActionpart}
+            <ProductDetail title="Realme1" descrip ="this is custom description"addClickAction={addClickActionpart}
                       removeClickAction={removeClickActionpart}  />
             <p>Suggestion</p>
             <div className="Product-Window">
-                {(search.length === 0
+                {(searching.length === 0
                   ? listOfObject
-                  : listOfObject.filter((item) => item.item2.includes(search))
+                  : listOfObject.filter((item) => item.item2.includes(searching))
                 ).map((item) => {
                   return (
                     <Card
