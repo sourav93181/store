@@ -87,7 +87,9 @@
 
 /*mobile-view-css*/
 
-.shop-item-container-m {
+@media screen and (max-width: 1000px){
+  
+.shop-item-container {
   display: grid;
   grid-template-rows: 3fr 0.7fr 1.5fr;
   grid-template-columns: 1fr 1fr 1fr;
@@ -99,7 +101,7 @@
   margin: 2vh;
 }
 
-.item-img-m {
+.item-img {
   grid-column: 1 / span 3;
   grid-row: 1 / span 1;
   width: 70vw;
@@ -109,7 +111,7 @@
   margin-top: 1vh;
   justify-self: center;
 }
-.item-name-m {
+.item-name {
   grid-row: 2 / span 1;
   grid-column: 1 / span 3;
   margin-left: 3vh;
@@ -119,7 +121,7 @@
 
 }
 
-.item-description-m{
+.item-description{
   grid-row: 3 / span 1;
   grid-column: 1 / span 2;
   margin-left: 3vh;
@@ -127,7 +129,7 @@
   overflow:auto;
 }
 
-.item-add-to-cart-m {
+.item-add-to-cart {
   grid-row: 3 / span 1;
   grid-column: 3 / span 1;
   border: 0.1vh solid gray;
@@ -139,7 +141,7 @@
   margin-left: 2vw;
 }
 
-.item-in-cart-m {
+.item-in-cart {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -147,4 +149,5 @@
   grid-row: 3 / span 1;
   grid-column: 3 / span 1;
   margin-right: 1.5vh;
+}
 }

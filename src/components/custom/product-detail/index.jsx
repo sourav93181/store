@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 import "./style.css";
-import {useParams } from "react-router-dom";
+
 
 export default function ProductSpecific(props) {
     const [val, setval] = useState(0);
     const {title="Product Name",descrip="this is the product description" , pricing="$200", addClickAction, removeClickAction } = props
     return (
         <div className='product-specific'>
-            <img src="images/Nothing.jpg" alt="" className='separate-img1' />
-            <img src="images/Nothing.jpg" alt="" className='separate-img2' />
-            <img src="images/Nothing.jpg" alt="" className='separate-img3' />
-            <img src="images/Nothing.jpg" alt="" className='separate-full-img' />
+            <img src="" alt="" className='separate-img1' />
+            <img src="" alt="" className='separate-img2' />
+            <img src="" alt="" className='separate-img3' />
+            <img src="" alt="" className='separate-full-img' />
             <p className='product-name' > {title}</p>
             <p className='product-detail'>{descrip}</p>
             <p className='product-price'>{pricing}</p>

@@ -7,9 +7,9 @@ import MobileScreen from "./mobileScreen";
 import Detail from "./details";
 import ClothScreen from "./clothesScreen";
 import { Routes } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
+
 export default function Browsing(props) {
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1000px)" });
+ 
 
   const [cartval, setCartval] = useState(0);
 
@@ -28,46 +28,6 @@ export default function Browsing(props) {
   }, []);
 
 
-
-  if(isTabletOrMobile) {
-    return (
-      <div className="Browsing-Window" >
-      <NavBar sizeOfCart={cartval} onSearchChange={(val) => setSearch(val)} />
-      <div className="loading-container">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <div className="Product-Window-mobile">
-                {(search.length === 0
-                  ? listOfObject
-                  : listOfObject.filter((item) => item.item2.includes(search))
-                ).map((item) => {
-                  return (
-                    <Card
-                      itemImages={item.item1}
-                      itemNames={item.item2}
-                      itemDesc={item.item3}
-                      addClickAction={incrementCart}
-                      removeClickAction={decrementCart}
-                    />
-                  );
-                })}
-              </div>
-            }
-          />
-          <Route path="/mobilescreen" element={<MobileScreen />} />
-          <Route path="/clothscreen" element={<ClothScreen />} />
-          <Route path="/detail" element={<Detail />} />
-        </Routes>
-      </div>
-
-    </div>
-    );
-  }else {
-  
-  
-  
   return (
     <div className="Browsing-Window" >
       <NavBar sizeOfCart={cartval} onSearchChange={(val) => setSearch(val)} />
@@ -96,11 +56,10 @@ export default function Browsing(props) {
           />
           <Route path="/mobilescreen" element={<MobileScreen />} />
           <Route path="/clothscreen" element={<ClothScreen />} />
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/browsing/detail" element={<Detail />} />
         </Routes>
       </div>
 
     </div>
   );
-}
 }
